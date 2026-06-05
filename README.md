@@ -1,12 +1,3 @@
-# Calculadora Java — Projeto Integrador IV-A
-
-**Aluno:** Thalles Bruno Goncalves Nery dos Santos  
-**Curso:** Análise e Desenvolvimento de Sistemas (EaD) — PUC Goiás  
-**Disciplina:** Projeto Integrador IV-A  
-**Ano:** 2026
-
----
-
 ## Sumário
 
 1. [Objetivo](#1-objetivo)
