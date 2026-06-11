@@ -8,6 +8,7 @@
 6. [Criação de Branch e Merge](#6-criação-de-branch-e-merge)
 7. [Workflow CI — Testes automáticos no Pull Request](#7-workflow-ci--testes-automáticos-no-pull-request)
 8. [Como executar localmente](#8-como-executar-localmente)
+9. [Anexos — Documentação Visual](ANEXOS.md)
 
 ---
 
@@ -31,20 +32,23 @@ calculadora/
 │   └── workflows/
 │       └── ci.yml                  ← Workflow GitHub Actions (CI)
 ├── assets/                         ← Prints de tela para documentação
-│   ├── 01-classe-calculadora.png
-│   ├── 02-classe-testes.png
-│   ├── 03-testes-passando.png
-│   ├── 04-repositorio-github.png
-│   ├── 05-branch-criada.png
-│   ├── 06-pull-request.png
-│   └── 07-ci-workflow.png
+│   ├── classe-calculadora.png
+│   ├── classe-testes-calculadora.png
+│   ├── clone-de-projeto.png
+│   ├── commits-and-merge.png
+│   ├── criacao-de-conta.png
+│   ├── nova-branch-cli.png
+│   ├── nova-branch.png
+│   ├── projeto-pre-existente.png
+│   └── repositorio-calculate-java.png
 ├── src/
 │   ├── main/java/com/puc/calculadora/
 │   │   └── Calculadora.java
 │   └── test/java/com/puc/calculadora/
 │       └── CalculadoraTest.java
 ├── pom.xml
-└── README.md
+├── README.md
+└── ANEXOS.md                       ← Documentação visual (prints)
 ```
 
 O projeto utiliza **Maven** como gerenciador de build e dependências. A dependência do JUnit 5 está declarada no `pom.xml`:
@@ -73,9 +77,7 @@ A classe `Calculadora` (pacote `com.puc.calculadora`) implementa os quatro méto
 
 O método `dividir` valida o divisor antes de operar, lançando uma exceção com mensagem descritiva quando `b == 0`, evitando comportamentos indefinidos.
 
-**Print — Implementação da classe Calculadora:**
-
-![Implementação da classe Calculadora](assets/01-classe-calculadora.png)
+**Print — Implementação da classe Calculadora:** ver [Anexos, seção 1](ANEXOS.md#1-implementação-da-classe-calculadora).
 
 ---
 
@@ -106,13 +108,7 @@ A classe `CalculadoraTest` contém **45 casos de teste** organizados com classes
 | **Dividir** | Positivos, negativos, positivo÷negativo, fracionário, 0÷número, si mesmo, 3 exceções (÷0), parametrizados | 13 |
 | **Total** | | **45** |
 
-**Print — Implementação da classe de testes:**
-
-![Implementação da classe de testes](assets/02-classe-testes.png)
-
-**Print — Todos os testes passando:**
-
-![Todos os testes passando](assets/03-testes-passando.png)
+**Print — Implementação da classe de testes:** ver [Anexos, seção 2](ANEXOS.md#2-implementação-da-classe-de-testes).
 
 ---
 
@@ -130,9 +126,7 @@ git remote add origin git@github.com:joaovittor-22/calculadora-java.git
 git push -u origin master
 ```
 
-**Print — Repositório criado no GitHub:**
-
-![Repositório no GitHub](assets/04-repositorio-github.png)
+**Print — Criação de conta e repositório no GitHub:** ver [Anexos, seções 3 e 4](ANEXOS.md#3-criação-de-conta-no-github).
 
 ---
 
@@ -146,13 +140,7 @@ git checkout -b feature/github-actions-ci
 
 Após o desenvolvimento e os commits nessa branch, ela foi enviada ao GitHub e um **Pull Request** foi aberto para merge na `master`. O merge consolida o histórico de ambas as branches.
 
-**Print — Branch criada no GitHub:**
-
-![Branch criada](assets/05-branch-criada.png)
-
-**Print — Pull Request aberto:**
-
-![Pull Request](assets/06-pull-request.png)
+**Print — Criação de branch e merge:** ver [Anexos, seções 5 e 6](ANEXOS.md#5-criação-de-branch).
 
 ---
 
@@ -169,10 +157,6 @@ on:
 ```
 
 O workflow roda `mvn verify` em **Java 17 e Java 21** em paralelo (matrix strategy) e publica o relatório Surefire como artefato de 7 dias — permitindo inspecionar o resultado de cada teste direto no GitHub.
-
-**Print — Workflow CI executando no Pull Request:**
-
-![Workflow CI](assets/07-ci-workflow.png)
 
 ---
 
